@@ -1,0 +1,16 @@
+v.0
+[dima] Start page with uploads
+[dima] Parse names and surnames from xlsx
+[mykola] Create badge template in jinja
+[mykola] Generate all badges
+[mykola] Create page to map names on badge
+[dima] Generate all badges to pdf (or html to pdf)
+[dima] Preview page Open Preview / Download buttons
+
+v.1
+[ ] Dynamically adjust the name field with name and see preview of one badge
+[ ] Choose fonts from default or upload own
+[ ] All one one page
+
+Someday
+[ ] Save generated pages and clean them after some time or space quota
