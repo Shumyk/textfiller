@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upload your files</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.badge_template.label }}<br/>
+            {{ form.badge_template() }}<br/>
+            {% for error in form.badge_template.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.names_excel.label }}<br/>
+            {{ form.names_excel() }}<br/>
+            {% for error in form.names_excel.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.font.label }}<br/>
+            {{ form.font() }}
+        </p>
+        <p> {{ form.submit() }}</p>
+    </form>
+{% endblock %}
