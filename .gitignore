@@ -109,3 +109,6 @@ venv.bak/
 
 # virtual environment
 vie/
+
+# upload folder
+app/upload_dir

@@ -1,1 +1,2 @@
 FLASK_APP=textfiller.py
+FLASK_ENV=development
