@@ -22,5 +22,11 @@ def upload():
             form.badge_template.name,
             form.names_excel.name,
             ', font - ' + form.font.name if form.font is None else ''))
-        return redirect(url_for('index'))
+        return redirect(url_for('review'))
     return render_template('upload.html', title='Upload your files', form=form)
+
+
+@app.route('/review', methods=['GET', 'POST'])
+def review():
+    files = FileWorker.get_uploaded_files()
+    return render_template('review.html', title='Review your uploads', files=files)

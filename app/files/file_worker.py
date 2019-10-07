@@ -1,4 +1,6 @@
 import os
+from os import listdir
+from os.path import isfile, join
 from app import app
 from werkzeug.utils import secure_filename
 
@@ -18,3 +20,8 @@ class FileWorker:
             if filename == '' or filename is None:
                 continue
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+    @staticmethod
+    def get_uploaded_files():
+        upload_folder = app.config['UPLOAD_FOLDER']
+        return [f for f in listdir(upload_folder) if isfile(join(upload_folder, f))]

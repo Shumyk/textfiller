@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Review your files</h1>
+    <p>
+        {% for file in files %}
+        <span style="color: red;">{{ file }}</span><br/>
+        {% endfor %}
+    </p>
+{% endblock %}
