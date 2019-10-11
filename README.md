@@ -1,4 +1,4 @@
-#Badge generator (pre-alpha)
+# Badge generator (pre-alpha)
  
 Have you ever been frustrated when making event badges for more than 50 people? We too, so we decided that this can be more fun and much quicker process.
 This app is an automated way to create a bunch of event badges with template and file with names.
