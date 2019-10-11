@@ -27,6 +27,6 @@ class FileWorker:
         files_content = set()
         files = [f for f in listdir(upload_folder) if isfile(join(upload_folder, f))]
         for file in files:
-            with open(upload_folder + '\\' + file, 'r') as content_file:
+            with open(upload_folder + '\\' + file, 'rb') as content_file:
                 files_content.add(content_file.read())
         return files_content
