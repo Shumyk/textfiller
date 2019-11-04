@@ -1,7 +1,8 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, send_from_directory
 from app import app
 from app.forms import UploadForm
 from app.files.file_worker import FileWorker
+from app.excel.excel_worker import ExcelWorker
 
 
 @app.route('/')
@@ -29,4 +30,10 @@ def upload():
 @app.route('/review', methods=['GET', 'POST'])
 def review():
     files = FileWorker.get_uploaded_files()
-    return render_template('review.html', title='Review your uploads', files=files)
+    return render_template('review.html', title='Review your uploads', files=files,
+                           upload_dir=app.config['UPLOAD_FOLDER'], get_excel_content=ExcelWorker.get_excel_content)
+
+
+@app.route('/preview_pdf/<path:pdf_name>', methods=['GET', 'POST'])
+def preview_pdf(pdf_name):
+    return send_from_directory(app.config['UPLOAD_FOLDER_REL'], pdf_name)

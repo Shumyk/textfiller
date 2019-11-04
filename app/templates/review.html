@@ -2,9 +2,23 @@
 
 {% block content %}
 <h1>Review your files</h1>
-    <p>
-        {% for file in files %}
-        <span style="color: burlywood;">{{ file }}</span><br/>
-        {% endfor %}
-    </p>
+<div id="review-main">
+    {% for file in files %}
+        {% if file.endswith(".pdf") %}
+            <embed src="preview_pdf/{{ file }}" type="application/pdf" width="80%" height="100%" />
+        {% endif %}
+        {% if file.endswith(".xlsx") %}
+            <div id="review-names">
+                {% for name in get_excel_content(upload_dir + '\\' + file) %}
+                    <label>
+                        <input class="review-names-input" value="{{ name }}"/>
+                    </label>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+<div id="review-generate-div">
+    <button>Generate</button>
+</div>
 {% endblock %}

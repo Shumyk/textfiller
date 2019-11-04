@@ -24,9 +24,9 @@ class FileWorker:
     @staticmethod
     def get_uploaded_files():
         upload_folder = app.config['UPLOAD_FOLDER']
-        files_content = set()
+        files_content = dict()
         files = [f for f in listdir(upload_folder) if isfile(join(upload_folder, f))]
         for file in files:
             with open(upload_folder + '\\' + file, 'rb') as content_file:
-                files_content.add(content_file.read())
+                files_content[file] = content_file.read()
         return files_content

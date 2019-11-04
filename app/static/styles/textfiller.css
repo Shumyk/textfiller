@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+}
+
+#review-main {
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#review-names {
+    width: 7%;
+    height: 100%;
+    overflow: auto;
+    padding: 5px;
+}
+
+.review-names-input {
+    width: 90%;
+    margin: 0;
+}
+
+#review-generate-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
